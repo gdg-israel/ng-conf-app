@@ -4,11 +4,11 @@ angular.module('starter.controllers', [])
   // Form data for the login modal
   $scope.loginData = {};
     $scope.speakers = [
-        { name: 'Omer', title:"Angular Developer",picture:"http://media.licdn.com/media/p/2/000/00d/35b/2fb11ab.jpg", id: 1 },
-        { name: 'Shai',title:"Angular Developer",picture:"http://media.licdn.com/media/p/2/000/00d/35b/2fb11ab.jpg", id: 2 },
-        { name: 'Uri', title:"Angular Developer",picture:"http://media.licdn.com/media/p/2/000/00d/35b/2fb11ab.jpg",id: 3 },
-        { name: 'Roy', title:"Angular Developer",picture:"http://media.licdn.com/media/p/2/000/00d/35b/2fb11ab.jpg",id: 4 },
-        { name: 'Alon',title:"Angular Developer",picture:"http://media.licdn.com/media/p/2/000/00d/35b/2fb11ab.jpg", id: 5 }
+        { name: 'PK', title:"Angular Developer",picture:"pk.png", id: 1 },
+        { name: 'Shai',title:"Angular Developer",picture:"ShaiReznik.jpg", id: 2 },
+        { name: 'Uri', title:"Angular Developer",picture:"UriShaked.jpg",id: 3 },
+        { name: 'Gil', title:"Angular Developer",picture:"GilFink.jpg",id: 4 },
+        { name: 'Alon',title:"Angular Developer",picture:"AlonHeller.jpg", id: 5 }
     ];
 
   // Create the login modal that we will use later
