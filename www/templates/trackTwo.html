@@ -1,0 +1,19 @@
+<ion-view view-title="Schedule">
+  <ion-content>
+    <a class="item item-divider item-icon-left" href="#/app/schedule">
+      <i class="icon ion-arrow-left-c"></i>
+      Track 1
+
+    </a>
+    <ion-list>
+
+
+
+
+      <ion-item ng-repeat="playlist in trackTwo" href="#/app/trackTwo/{{playlist.time}}" >
+        <p><b>{{playlist.time}} {{playlist.name}}</b></p>
+        <p>{{playlist.speaker}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

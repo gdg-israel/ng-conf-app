@@ -1,10 +1,18 @@
 <ion-view view-title="Speakers">
   <ion-content>
     <ion-list>
-      <ion-item class="item-thumbnail-left" ng-repeat="speaker in speakers" href="#/app/speakers/{{speaker.id}}">
-        <img src="https://raw.githubusercontent.com/gdg-israel/ng-conf-2015/master/web/images/team/{{speaker.picture}}">
-        <h2>{{speaker.name}}</h2>
-        <p>{{speaker.title}}</p>
+      <ion-item class="item-thumbnail-left" ng-repeat="speaker in speakers">
+        <img src="img/speakers/{{speaker.name|speakerImageName}}.jpg"/>
+        <h4>{{speaker.name}}</h4>
+
+        <div class="ngconf-social-links">
+          <a href="#" ng-click="openExtLink('http://github.com/',speaker.github)" target="_blank" title="GitHub" >
+            <i class="button button-icon icon ion-social-github"></i>
+          </a>
+          <a href="#" ng-click="openExtLink('http://twitter.com/',speaker.twitter)" target="_blank" title="Twitter" ng-if="speaker.twitter">
+            <i class="button button-icon icon ion-social-twitter"></i>
+          </a>
+        </div>
       </ion-item>
     </ion-list>
   </ion-content>

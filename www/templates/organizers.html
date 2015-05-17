@@ -1,0 +1,24 @@
+<ion-view view-title="Organizers">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-thumbnail-left" ng-repeat="speaker in team">
+        <img src="img/team/{{speaker.name|speakerImageName}}.jpg"/>
+        <h4>{{speaker.name}}</h4>
+        <div class="ngconf-social-links">
+          <a  href="#" ng-click="openExtLink('http://github.com/',speaker.github)" title="GitHub" ng-if="speaker.github">
+            <i class="button button-icon icon ion-social-github"></i>
+          </a>
+          <a  href="#" ng-click="openExtLink('http://twitter.com/',speaker.twitter)" target="_blank" title="Twitter" ng-if="speaker.twitter">
+            <i class="button button-icon icon ion-social-twitter"></i>
+          </a>
+          <a  href="#" ng-click="openExtLink('',speaker.linkdin)" title="Linkedin" ng-if="speaker.linkdin">
+            <i class="button button-icon icon ion-social-linkedin-outline"></i>
+          </a>
+          <a  href="#" ng-click="openExtLink('',speaker.link)" title="Homepage" ng-if="speaker.link">
+            <i class="button button-icon icon ion-link"></i>
+          </a>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

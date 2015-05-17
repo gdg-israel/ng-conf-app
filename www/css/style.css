@@ -1,1 +1,7 @@
 /* Empty. Add your own CSS if you like */
+.item-icon-center {
+    padding-right: 54px; }
+.item-icon-center .icon {
+    right: 11px; }
+.item-icon-left-plus .icon{
+    right: 21px; }

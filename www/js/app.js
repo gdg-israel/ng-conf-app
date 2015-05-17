@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -48,6 +48,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
   })
 
+  .state('app.map', {
+      url: "/map",
+      views: {
+          'menuContent': {
+              templateUrl: "templates/map.html"
+          }
+      }
+  })
+
   .state('app.browse', {
     url: "/browse",
     views: {
@@ -60,18 +69,59 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: "/schedule",
       views: {
         'menuContent': {
-          templateUrl: "templates/schedule.html",
-          controller: 'ScheduleCtrl'
+          templateUrl: "templates/schedule.html"
         }
       }
     })
 
+      .state('app.trackTwo', {
+          url: "/trackTwo",
+          views: {
+              'menuContent': {
+                  templateUrl: "templates/trackTwo.html"
+              }
+          }
+      })
+  .state('app.selectedSchedule', {
+      url: "/schedule/:time",
+      views: {
+          'menuContent': {
+              templateUrl: "templates/scheduleItem.html",
+              controller : 'ScheduleItemCtrl'
+          }
+      }
+  })
+      .state('app.selectedTrackTwo', {
+          url: "/trackTwo/:time",
+          views: {
+              'menuContent': {
+                  templateUrl: "templates/scheduleItem.html",
+                  controller : 'TrackTwoItemCtrl'
+              }
+          }
+      })
+      .state('app.partners', {
+          url: "/partners",
+          views: {
+              'menuContent': {
+                  templateUrl: "templates/partners.html"
+              }
+          }
+      })
   .state('app.speakers', {
       url: "/speakers",
       views: {
           'menuContent': {
               templateUrl: "templates/speakers.html",
               controller: 'SpeakersCtrl'
+          }
+      }
+  })
+      .state('app.organizers', {
+      url: "/organizers",
+      views: {
+          'menuContent': {
+              templateUrl: "templates/organizers.html"
           }
       }
   })
@@ -99,4 +149,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
 .config(function ($sceDelegateProvider) {
   $sceDelegateProvider.resourceUrlWhitelist(['self', new RegExp('^(http[s]?):\/\/(w{3}.)?youtube\.com/.+$')]);
+})
+
+
+.filter('speakerImageName', function () {
+    return function (name) {
+        return name ? name.replace(/\s/g, '') : '';
+    };
 });
